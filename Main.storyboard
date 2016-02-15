@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Feed-->
         <scene sceneID="wlR-4L-qWm">
             <objects>
-                <viewController id="aqs-nt-4TJ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Feed" id="aqs-nt-4TJ" userLabel="Feed" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="M08-lB-0kj"/>
                         <viewControllerLayoutGuide type="bottom" id="FV2-0C-7dE"/>
@@ -17,13 +17,20 @@
                     <view key="view" contentMode="scaleToFill" id="Pbd-gj-52n">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2z5-95-7d2">
+                                <rect key="frame" x="20" y="28" width="560" height="523"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.49803921569999998" green="0.83137254900000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Hyb-3r-Ylx"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="feed_tab" selectedImage="feed_tab" id="Hyb-3r-Ylx" userLabel="Feed">
+                        <inset key="imageInsets" minX="-5" minY="-3" maxX="-5" maxY="-3"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nrh-kQ-8A7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="657" y="-691"/>
+            <point key="canvasLocation" x="545" y="-849"/>
         </scene>
         <!--Settings-->
         <scene sceneID="04I-ey-oVq">
@@ -119,7 +126,7 @@
                                                 <rect key="frame" x="22" y="74" width="30" height="45"/>
                                                 <gestureRecognizers/>
                                                 <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="WN5-a9-0PJ" appends="YES" id="c8l-ad-6hI"/>
+                                                    <outletCollection property="gestureRecognizers" destination="29m-e7-EeG" appends="YES" id="EtE-TK-gaq"/>
                                                 </connections>
                                             </imageView>
                                         </subviews>
@@ -168,7 +175,9 @@
                             <constraint firstAttribute="bottomMargin" secondItem="kh9-bI-dsS" secondAttribute="bottom" id="y2a-mY-T6x"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="r2k-32-x4g" userLabel="Profile"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile_tab" selectedImage="profile_tab" id="r2k-32-x4g" userLabel="Profile">
+                        <inset key="imageInsets" minX="-3" minY="-3" maxX="-3" maxY="-3"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rO-If-CEs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="wgG-GA-2Og" userLabel="notifications">
@@ -177,31 +186,77 @@
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="k3A-Pn-pFt" userLabel="profile image"/>
-                <tapGestureRecognizer id="WN5-a9-0PJ" userLabel="settings">
+                <tapGestureRecognizer id="29m-e7-EeG" userLabel="settings">
                     <connections>
-                        <segue destination="Qjj-if-603" kind="show" id="rmv-Sg-VKI"/>
+                        <segue destination="Qjj-if-603" kind="show" id="CU5-x6-4LN"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="657" y="-1610"/>
+            <point key="canvasLocation" x="545" y="-1550"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rZE-2q-v7S">
             <objects>
                 <tabBarController id="SxI-hZ-vk1" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="ntO-6g-L4P">
+                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" itemPositioning="fill" id="ntO-6g-L4P">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" red="0.97647100689999999" green="0.69411802290000002" blue="0.01176500041" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="Ikh-xb-7rF" kind="relationship" relationship="viewControllers" id="rI2-gt-sve"/>
                         <segue destination="aqs-nt-4TJ" kind="relationship" relationship="viewControllers" id="slu-4d-xy5"/>
+                        <segue destination="dQP-Yt-cVb" kind="relationship" relationship="viewControllers" id="k1v-98-8YV"/>
+                        <segue destination="vyA-Td-HVs" kind="relationship" relationship="viewControllers" id="gC3-2j-2Jg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14m-1e-XuG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-475" y="-1101"/>
+            <point key="canvasLocation" x="-445" y="-1079"/>
+        </scene>
+        <!--Causes-->
+        <scene sceneID="KEE-Wj-jj8">
+            <objects>
+                <viewController id="dQP-Yt-cVb" userLabel="Causes" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tfS-yT-9tC"/>
+                        <viewControllerLayoutGuide type="bottom" id="v8t-Qc-eVn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SQ6-r1-XT7" userLabel="Causes">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.49803921569999998" green="0.83137254900000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <accessibility key="accessibilityConfiguration" label="Causes"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Causes" image="star" selectedImage="star" id="rm5-s8-Nsd" userLabel="Causes">
+                        <inset key="imageInsets" minX="-3" minY="-3" maxX="-3" maxY="-3"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MSi-Gw-Qrk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-427" y="-101"/>
+        </scene>
+        <!--Events-->
+        <scene sceneID="isw-9A-ziM">
+            <objects>
+                <viewController id="vyA-Td-HVs" userLabel="Events" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0LR-rf-gyg"/>
+                        <viewControllerLayoutGuide type="bottom" id="JDS-QM-Q8i"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3oi-Vh-Zfv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.49803921569999998" green="0.83137254900000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Events" image="events" selectedImage="events" id="qrm-mR-hDj" userLabel="Events">
+                        <inset key="imageInsets" minX="-3" minY="-3" maxX="-3" maxY="-3"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qth-lf-H4d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="203" y="-101"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="ja2-yh-9vL">
@@ -266,13 +321,18 @@
     </scenes>
     <resources>
         <image name="create_cause" width="13" height="13"/>
+        <image name="events" width="12" height="13"/>
+        <image name="feed_tab" width="14" height="9"/>
         <image name="notifications" width="11" height="13"/>
         <image name="notifications_new" width="14" height="13"/>
         <image name="profile icon " width="31" height="31"/>
+        <image name="profile_tab" width="10" height="10"/>
         <image name="right_arrow" width="5" height="8"/>
         <image name="settings" width="8" height="9"/>
+        <image name="star" width="13" height="12"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8Zh-Fa-N8K"/>
+        <segue reference="rI2-gt-sve"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.97647100689999999" green="0.69411802290000002" blue="0.01176500041" alpha="1" colorSpace="calibratedRGB"/>
 </document>
